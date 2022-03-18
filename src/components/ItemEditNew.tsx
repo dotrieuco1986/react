@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import TodoItem from "../interfaces/DataType";
+import { constantData } from "../constant/ConstantData";
+import { TodoItem } from "../interfaces/DataType";
 interface Props {
   editItem: TodoItem;
   todoItems: TodoItem[];
@@ -50,9 +51,9 @@ const ItemEditNew: React.FC<Props> = ({
             setOldItem({ ...oldItem, level: parseInt(e.target.value) });
           }}
         >
-          <option value={0}>Low</option>
-          <option value={1}>Medium</option>
-          <option value={2}>High</option>
+          <option value={constantData.LOW}>Low</option>
+          <option value={constantData.MEDIUM}>Medium</option>
+          <option value={constantData.HIGH}>High</option>
         </select>
       </td>
       <td>

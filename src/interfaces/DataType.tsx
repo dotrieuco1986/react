@@ -3,4 +3,5 @@ interface TodoItem {
   name: string;
   level: number;
 }
-export default TodoItem;
+
+export type { TodoItem };

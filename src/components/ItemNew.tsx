@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import TodoItem from "../interfaces/DataType";
+import { constantData } from "../constant/ConstantData";
+import { TodoItem } from "../interfaces/DataType";
 import ItemEditNew from "./ItemEditNew";
+
 interface Props {
   todoItem: TodoItem;
   todoItems: TodoItem[];
@@ -11,9 +13,9 @@ const ItemNew: React.FC<Props> = ({ todoItem, todoItems, setTodoItems }) => {
   const [isEditItem, setIsEditItem] = useState(false);
   const renderLevel = (level: number) => {
     switch (level) {
-      case 1:
+      case constantData.MEDIUM:
         return <span className="label label-danger">Medium</span>;
-      case 2:
+      case constantData.HIGH:
         return <span className="label label-warning">High</span>;
       default:
         return <span className="label label-info">Low</span>;

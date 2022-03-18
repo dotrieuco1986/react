@@ -1,6 +1,6 @@
 import React from "react";
 import ItemNew from "./ItemNew";
-import TodoItem from "../interfaces/DataType";
+import { TodoItem } from "../interfaces/DataType";
 
 interface Props {
   todoItems: TodoItem[];

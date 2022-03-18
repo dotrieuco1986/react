@@ -1,4 +1,4 @@
-import TodoItem from "../interfaces/DataType";
+import { TodoItem } from "../interfaces/DataType";
 const mockData: TodoItem[] = [
   {
     id: "abc1",
