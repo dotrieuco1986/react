@@ -4,17 +4,24 @@ import Title from "./components/Title";
 import { TodoItem } from "./interfaces/DataType";
 import mockData from "./data/MockData";
 import AddItem from "./components/AddItem";
+import SortItem from "./components/SortItem";
+import SearchItem from "./components/SearchItem";
 
 const data = mockData;
 const App: React.FC = () => {
   const [todoItems, setTodoItems] = useState<TodoItem[]>(data);
   const [isAddItem, setIsAddItem] = useState(false);
+
   return (
     <div className="container">
       <Title />
       <div className="row">
-        <div className="col-4">search</div>
-        <div className="col-2">sort</div>
+        <div className="col-3">
+          <SearchItem todoItems={todoItems} setTodoItems={setTodoItems} />
+        </div>
+        <div className="col-3">
+          <SortItem todoItems={todoItems} setTodoItems={setTodoItems} />
+        </div>
         <div className="col-6">
           <button
             type="button"

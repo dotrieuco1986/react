@@ -25,16 +25,20 @@ const ListItem: React.FC<Props> = ({ todoItems, setTodoItems }) => {
           </tr>
         </thead>
         <tbody>
-          {todoItems.length > 0
-            ? todoItems.map((todoItem) => (
-                <ItemNew
-                  todoItem={todoItem}
-                  key={todoItem.id}
-                  todoItems={todoItems}
-                  setTodoItems={setTodoItems}
-                />
-              ))
-            : "No data"}
+          {todoItems.length > 0 ? (
+            todoItems.map((todoItem) => (
+              <ItemNew
+                todoItem={todoItem}
+                key={todoItem.id}
+                todoItems={todoItems}
+                setTodoItems={setTodoItems}
+              />
+            ))
+          ) : (
+            <tr>
+              <td>No data</td>
+            </tr>
+          )}
         </tbody>
       </table>
     </div>
